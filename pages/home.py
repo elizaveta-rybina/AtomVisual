@@ -8,7 +8,7 @@ from helpers.choropleth import create_choropleth_chart
 
 CHOROPLETH_INTERVAL = 50
 
-url = 'https://lottie.host/d5c34acc-4b52-435d-8efa-d0e49661445d/si8aXtHSUw.json'
+url = 'https://lottie.host/a41f11dd-8351-4a1b-b3ef-540310b13fbf/uS8JUVs5UD.json'
 options = dict(loop=True, autoplay=True)
 
 dash.register_page(
@@ -25,7 +25,7 @@ layout = dmc.Grid(
         dmc.Col(
             [
                 dmc.Space(className='main-space', h=20),
-                de.Lottie(className='lottie', style={'margin' : '0 auto', 'text-align' : 'center'},  width="45%", height="45%", url=url, options=options, isClickToPauseDisabled=True),
+                de.Lottie(className='lottie', style={'margin' : '0 auto', 'text-align' : 'center'}, width="81%", height="81%",url=url, options=options, isClickToPauseDisabled=True),
                 dmc.Stack(
                     style={'margin-top' : 'auto'},
                     children=[
