@@ -4,11 +4,16 @@
 }
 
 body {
-    background-image: url('background.jpeg');
-    background: linear-gradient(90deg, rgba(11,6,84,1) 0%, rgba(1,4,20,1) 45%, rgba(0,0,0,1) 75%);
+    min-height: 100vh;
+    background: linear-gradient(to top, #dfe9f3 0%, white 100%);
 }
 
 .nav-container {
     position: fixed;
     z-index: 2;
+}
+
+.lottie{
+    height: 500px;
+    margin: 20px 0;
 }

@@ -1,14 +1,12 @@
 import plotly.express as px
 
-
-# FIGURE:
 def create_choropleth_chart(df_launches_per_country):
     fig = px.choropleth(
         df_launches_per_country,
-        locations='country_code',
-        color='Total Number of Launches',
+        locations='Code',
+        color='nuclear_weapons_stockpile',
         color_continuous_scale=px.colors.sequential.haline_r[8:],
-        custom_data=['Country', 'country_code']
+        custom_data=['Entity', 'Code']
     )
 
     fig.update_geos(
@@ -17,17 +15,17 @@ def create_choropleth_chart(df_launches_per_country):
         projection_rotation_lat=20,
         showocean=False,
         showcoastlines=True,
-        coastlinecolor='white',
+        coastlinecolor='black',
         coastlinewidth=1,
         showland=False,
         landcolor='#07053E',  # couleur continent
         showlakes=False,
         lakecolor='#202E78',  # couleur lac
         showcountries=False,
-        countrycolor='white',
+        countrycolor='black',
         bgcolor='rgba(0,0,0,0)',
         framewidth=1,
-        framecolor='white',  # couleur du contour
+        framecolor='black',  # couleur du contour
     )
 
     fig.update_layout(
@@ -39,17 +37,16 @@ def create_choropleth_chart(df_launches_per_country):
             bgcolor='rgba(11, 6, 81, 0.8)',
             bordercolor='rgba(11, 6, 81, 0.8)',
             font=dict(
-                color='white'
+                color='black'
             )
         )
     )
 
     fig.update_traces(
         marker_line_width=1,
-        marker_line_color='white',
+        marker_line_color='black',
         hovertemplate=(
-                '<b>%{customdata[0]} (%{customdata[1]})</b><br>' +
-                'Total number of Rockets launched: %{z}<br>'
+            '<b>%{customdata[0]} (%{customdata[1]})</b><br>Общее количество ядерного оружия: %{z}<extra></extra>'
         )
     )
 

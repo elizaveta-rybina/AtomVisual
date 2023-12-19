@@ -1,6 +1,6 @@
 import dash
 import pandas as pd
-from dash import dcc, Input, Output, State, callback, clientside_callback
+from dash import dcc, Input, Output, State, callback, clientside_callback, html
 from dash_iconify import DashIconify
 import dash_mantine_components as dmc
 import dash_extensions as de
@@ -8,7 +8,7 @@ from helpers.choropleth import create_choropleth_chart
 
 CHOROPLETH_INTERVAL = 50
 
-url = 'https://lottie.host/4dd24149-2984-451d-9290-7ed9d189ad85/esDWD0Bf84.json'
+url = 'https://lottie.host/d5c34acc-4b52-435d-8efa-d0e49661445d/si8aXtHSUw.json'
 options = dict(loop=True, autoplay=True)
 
 dash.register_page(
@@ -25,10 +25,11 @@ layout = dmc.Grid(
         dmc.Col(
             [
                 dmc.Space(className='main-space', h=20),
-                de.Lottie(url=url, options=options, isClickToPauseDisabled=True),
+                de.Lottie(className='lottie', style={'margin' : '0 auto', 'text-align' : 'center'},  width="45%", height="45%", url=url, options=options, isClickToPauseDisabled=True),
                 dmc.Stack(
+                    style={'margin-top' : 'auto'},
                     children=[
-                        dmc.Title('A little story about space..', style={'color': 'white'}, align='center'),
+                        dmc.Title('Атомная история человечества', style={'color': 'black'}, align='center'),
                         dmc.Center(
                             [
                                 dmc.Text(
@@ -37,7 +38,7 @@ layout = dmc.Grid(
                                         "milestones. Explore real-time data visualizations and get insights into the "
                                         "future of space exploration."
                                     ],
-                                    style={'color': 'white', 'width': '50%'},
+                                    style={'color': 'black', 'width': '50%'},
                                     align='center',
                                     id='main-text'
                                 ),
@@ -46,13 +47,13 @@ layout = dmc.Grid(
                         dcc.Link(
                             [
                                 dmc.Button(
-                                    'start',
+                                    'Начать',
                                     id='start-btn',
                                     variant='outline',
-                                    color='white',
+                                    color='black',
                                     size='lg',
                                     uppercase=True,
-                                    rightIcon=DashIconify(icon='ion:rocket-outline', width=30)
+                                    rightIcon=DashIconify(icon='iconoir:radiation', width=30)
                                 ),
                             ],
                             href='/historical'
@@ -73,7 +74,7 @@ layout = dmc.Grid(
                     id='right-container',
                     children=[
                         dmc.Loader(
-                            color="blue",
+                            color="black",
                             size="md",
                             variant="oval"
                         ),
@@ -86,16 +87,14 @@ layout = dmc.Grid(
     className='hide',
 )
 
-
 @callback(
     Output('right-container', 'children'),
     Input('past-launches-data', 'data'),
 )
+
 def create_total_launches_fig(past_launches_data):
-    past_launches_data_df = pd.DataFrame(past_launches_data)
-    df_launches_per_country = past_launches_data_df.groupby(['country_code', 'Country']).size().reset_index().rename(
-        columns={0: 'Total Number of Launches'}
-    )
+    df_launches_per_country = pd.DataFrame(past_launches_data)
+    df_launches_per_country = df_launches_per_country[df_launches_per_country['Year'] == 2022]
 
     return [
         dcc.Graph(
@@ -106,8 +105,7 @@ def create_total_launches_fig(past_launches_data):
             config={
                 'displayModeBar': False,
                 'scrollZoom': False,
-                'doubleClick': False,
-                # 'staticPlot': True
+                'doubleClick': False
             }
         ),
         dcc.Interval(id='choropleth-interval', interval=CHOROPLETH_INTERVAL)
