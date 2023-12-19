@@ -33,4 +33,4 @@ def load_past_launches_data(_):
     return dff
 
 if __name__ == "__main__":
-    app.run_server(debug=False)
+    app.run(host='0.0.0.0', port='8080', debug=False)
