@@ -15,17 +15,17 @@ def create_choropleth_chart(df_launches_per_country):
         projection_rotation_lat=20,
         showocean=False,
         showcoastlines=True,
-        coastlinecolor='black',
+        coastlinecolor='white',
         coastlinewidth=1,
         showland=False,
         landcolor='#07053E',  # couleur continent
         showlakes=False,
         lakecolor='#202E78',  # couleur lac
         showcountries=False,
-        countrycolor='black',
+        countrycolor='white',
         bgcolor='rgba(0,0,0,0)',
         framewidth=1,
-        framecolor='black',  # couleur du contour
+        framecolor='white',  # couleur du contour
     )
 
     fig.update_layout(
@@ -37,14 +37,14 @@ def create_choropleth_chart(df_launches_per_country):
             bgcolor='rgba(11, 6, 81, 0.8)',
             bordercolor='rgba(11, 6, 81, 0.8)',
             font=dict(
-                color='black'
+                color='white'
             )
         )
     )
 
     fig.update_traces(
         marker_line_width=1,
-        marker_line_color='black',
+        marker_line_color='white',
         hovertemplate=(
             '<b>%{customdata[0]} (%{customdata[1]})</b><br>Общее количество ядерного оружия: %{z}<extra></extra>'
         )

@@ -29,7 +29,7 @@ layout = dmc.Grid(
                 dmc.Stack(
                     style={'margin-top' : 'auto'},
                     children=[
-                        dmc.Title('Атомная история человечества', style={'color': 'black'}, align='center'),
+                        dmc.Title('Атомная история человечества', style={'color': 'white'}, align='center'),
                         dmc.Center(
                             [
                                 dmc.Text(
@@ -38,7 +38,7 @@ layout = dmc.Grid(
                                         "milestones. Explore real-time data visualizations and get insights into the "
                                         "future of space exploration."
                                     ],
-                                    style={'color': 'black', 'width': '50%'},
+                                    style={'color': 'white', 'width': '50%'},
                                     align='center',
                                     id='main-text'
                                 ),
@@ -50,7 +50,7 @@ layout = dmc.Grid(
                                     'Начать',
                                     id='start-btn',
                                     variant='outline',
-                                    color='black',
+                                    color='white',
                                     size='lg',
                                     uppercase=True,
                                     rightIcon=DashIconify(icon='iconoir:radiation', width=30)
@@ -74,7 +74,7 @@ layout = dmc.Grid(
                     id='right-container',
                     children=[
                         dmc.Loader(
-                            color="black",
+                            color="white",
                             size="md",
                             variant="oval"
                         ),
