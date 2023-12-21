@@ -16,6 +16,7 @@ dash.register_page(
 
 nuclear_plants=pd.read_csv("./data/nuclear_power_plants.csv",delimiter=';',encoding='latin1')
 nuclear_test=pd.read_csv("./data/number-of-nuclear-weapons-tests.csv")
+nuclear_number = pd.read_csv("./data/nuclear-warhead-stockpiles.csv")
 
 layout = dmc.Grid(
     [
@@ -52,7 +53,7 @@ layout = dmc.Grid(
 
 def update_visualization(selected_type):
     if selected_type == 'linear':
-        return 
+        return create_linear(nuclear_number)
     elif selected_type == 'histogram':
         return create_histogram_weapon(nuclear_test)
         

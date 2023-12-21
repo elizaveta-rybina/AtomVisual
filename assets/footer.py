@@ -1,7 +1,7 @@
 import dash_mantine_components as dmc
 from dash_iconify import DashIconify
 
-GITHUB_LISA = 'https://github.com/elizaveta-rybina'
+GITHUB_LISA = 'https://github.com/elizaveta-rybina/AtomVisual'
 CONTACT_ICON_WIDTH = 25
 
 footer = dmc.Grid(
