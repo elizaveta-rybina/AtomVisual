@@ -22,7 +22,7 @@ footer = dmc.Grid(
                             children=[
                                 dmc.Anchor(
                                     children=[DashIconify(
-                                        icon='mdi:github', width=CONTACT_ICON_WIDTH)
+                                        icon='mdi:github', width=CONTACT_ICON_WIDTH, className='github-name')
                                     ],
                                     href=GITHUB_LISA
                                 )

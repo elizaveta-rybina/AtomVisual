@@ -29,16 +29,15 @@ layout = dmc.Grid(
                 dmc.Stack(
                     style={'margin-top' : 'auto'},
                     children=[
-                        dmc.Title('Атомная история человечества', style={'color': 'white'}, align='center'),
+                        dmc.Title('Ядерная эпоха человечества', style={'color': 'white'}, align='center'),
                         dmc.Center(
                             [
                                 dmc.Text(
                                     children=[
-                                        "Dive into the fascinating world of space missions, launches, and historical "
-                                        "milestones. Explore real-time data visualizations and get insights into the "
-                                        "future of space exploration."
+                                        "Добро пожаловать на сайт, посвященный ядерной эпохе! "
+                                        "Мы расскажем об развитии атомной энергетики, с помощью различных графиков и карт."
                                     ],
-                                    style={'color': 'white', 'width': '50%'},
+                                    style={'color': 'white', 'width': '70%'},
                                     align='center',
                                     id='main-text'
                                 ),
@@ -48,15 +47,15 @@ layout = dmc.Grid(
                             [
                                 dmc.Button(
                                     'Начать',
+                                    className='start-btn',
                                     id='start-btn',
                                     variant='outline',
-                                    color='white',
                                     size='lg',
                                     uppercase=True,
                                     rightIcon=DashIconify(icon='iconoir:radiation', width=30)
                                 ),
                             ],
-                            href='/historical'
+                            href='/map'
                         )
                     ],
                     align='center',

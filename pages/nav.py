@@ -14,7 +14,7 @@ def navbar():
     return dmc.Grid(
         [
             dmc.ActionIcon(
-                DashIconify(icon='zondicons:menu', width=20),
+                DashIconify(icon='zondicons:menu', width=20, className='nav-icon'),
                 color='white',
                 variant='transparent',
                 id='nav-btn',
@@ -46,7 +46,7 @@ def navbar():
                         id={'type': 'dynamic-link', 'index': idx},
                     ) for idx, page in enumerate(dash.page_registry.values()) if page['module'] != 'pages.not_found_404'
                 ],
-                title='Choose your exploration..',
+                title='Выберите то, о чем хотите узнать',
                 size='100%',
                 id='full-modal',
                 zIndex=10000,

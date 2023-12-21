@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    font-family:'Segoe UI', Tahoma, Verdana, sans-serif;
 }
 
 body {
@@ -34,7 +35,40 @@ body {
 }
 
 .right-container {
-    height: 90vh;
+    height: 100vh;
+    
+}
+
+.github-name, .nav-icon, .start-btn{
+    color: white;
+}
+
+.start-btn{
+    border: 1px solid white;
+}
+
+.visualization-type label, .visualization-type-weapon label{
+    list-style: none;
+    border: 1px solid white;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 10px;
+    color: white;
+
+}
+
+.visualization-type, .visualization-type-weapon{
+    margin: 10px auto;
+    text-align: center;
+}
+
+.visualization-type label input, .visualization-type-weapon label input{
+    display: none;
+}
+
+.visualization-output, .visualization-output-weapon{
+    margin-top: 10px;
+    padding: 0;
 }
 
 .fade-in {
@@ -45,4 +79,15 @@ body {
 .fade-out {
     opacity: 0;
     transition: opacity 0.5s ease-out;
+}
+
+.main-title-map, .main-title-weapon{
+    display: block;
+    text-align: center;
+    margin: 60px auto 20px auto;
+}
+
+.atom-container, .weapon-container{
+    margin: 0 auto;
+    min-height: 100vh;
 }
